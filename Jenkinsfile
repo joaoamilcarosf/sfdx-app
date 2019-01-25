@@ -71,7 +71,6 @@ node {
         }
 
 		stage('Run Apex Test') {
-			sh "mkdir -p ${RUN_ARTIFACT_DIR}"
 			timeout(time: 120, unit: 'SECONDS') {
 				if (isUnix()) {
 					rc = sh returnStatus: true, script: "${toolbelt} force:apex:test:run --targetusername ${SFDC_USERNAME}"
